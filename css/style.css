@@ -1,0 +1,747 @@
+@charset "utf-8";
+
+/*--------------------------------------------------------------
+Couleurs
+--------------------------------------------------------------*/
+
+:root {
+    --couleur-base: #29224B;
+    --couleur-bg: white;
+    --bleu-fonce: #140F25;
+    --rose-commun: #9D00B8;
+}
+/*--------------------------------------------------------------
+Styles généraux
+--------------------------------------------------------------*/
+body{
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: var(--couleur-base);
+}
+main{
+    margin-top: 3rem;
+}
+/*------nav-----*/
+.menu-autre {
+    display: none;
+}
+
+.menu-mobile {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    z-index: 50;
+}
+
+#logo {
+    width: 3em;
+    height: 3em;
+}
+
+.menu {
+    background-image: url(../images/img-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: screen;
+    font-size: 2em;
+    text-align: center;
+
+    background-color: var(--bleu-moyen);
+
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+
+    transform: translateX(100%);
+    transition: transform 1s;
+}
+
+.menu a {
+    text-decoration: none;
+    padding: 1.3rem;
+
+    color: var(--couleur-bg);
+}
+
+.menu a:hover {
+    background-color: var(--couleur-bg);
+    color: var(--couleur-base);
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--couleur-bg);
+    padding: 0.1em;
+    width: 55%;
+}
+
+label {
+    padding-right: 0.2em;
+}
+
+input {
+    border: none;
+    width: 70%;
+}
+
+#recherche {
+    width: 1.2em;
+    padding-top: 0.2em;
+    height: auto;
+}
+
+#ouverture {
+    color: var(--couleur-bg);
+    font-size: 50px;
+}
+
+#fermeture {
+    color: var(--couleur-bg);
+    font-size: 50px;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
+
+/*--------------- MENU - BOUTON -----------------*/
+.bouton-burger {
+    cursor: pointer;
+    transition: transform 1s;
+}
+
+#bouton-principal {
+    display: none;
+}
+
+
+/*--------------- BOUTON -----------------*/
+.bouton-burger {
+    cursor: pointer;
+    transition: transform 1s;
+}
+
+#bouton-principal {
+    display: none;
+}
+
+#bouton-principal:checked ~ .menu {
+    transform: translateX(0%);
+}
+/*-------------------- FOND HEADER -------------------*/
+.media{
+    display: none;
+}
+header{
+    width: 100vw;
+    height: 80vh;
+    background-image: url(../images/Img1.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color:white;
+    display: grid;
+}
+header .titres{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+}
+header h1{
+    
+    grid-column: 2/6;
+    font-size: 12vw;
+    font-family: 'Abril Fatface', cursive;
+}
+.titres div:first-of-type{
+    grid-column: 2/6;
+    display: flex;
+    justify-content: center;
+}
+header h2{
+    grid-column: 4/6;
+    grid-row: 2/3;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    font-size: 1.2rem;
+}
+header ul{
+    position: absolute;
+    top: 30%;
+    right: 88%;
+    width: 40px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.ligne1{
+    position: relative;
+    top: 150px;
+    padding: 0;
+    height: 25vh;
+    width: 0vw;
+    border: 1px solid white;
+}
+.ligne2{
+    position: relative;
+    top: 75px;
+    padding: 0;
+    height: 25vh;
+    width: 0vw;
+    border: 1px solid white;
+}
+.ligne3{
+    padding: 0;
+    height: 25vh;
+    width: 0vw;
+    border: 1px solid white;
+}
+/*-------------------MAIN-----------------------*/
+/*-----carrousel----*/
+.carrousel{
+    background-color: white;
+    width: 100%;
+    border: 1px solid rgb(125, 105, 148);
+}
+.carrousel h2{
+    margin-top: 1px;
+    padding-top: 1.5rem;
+    position: relative;
+    left: 15%;
+    font-family: 'Abril Fatface', cursive;
+    font-weight: 400;
+    font-size: 6vw;
+}
+.ligne{
+    width: 99.5%;
+    height: 0;
+    border: 2px solid black;
+    margin: 0 0 10px 0;
+
+}
+.contenantImg{
+    overflow: hidden;
+    height: 30%;
+}
+.gallery img{
+    position: relative;
+    bottom: 50%;
+    width: 100%;
+}
+.gallery-cell {
+    width: 70%;
+    height: 500px;
+    margin: 0px 30px 0px 30px;
+}
+  
+/* cell number */
+.gallery-cell:before {
+    display: block;
+    text-align: center;
+    line-height: 200px;
+    font-size: 80px;
+    color: white;
+}
+.small{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+}
+.carrousel h3{
+    font-family: 'Abril Fatface', cursive;
+    font-weight: 400;
+}
+.carrousel p{
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    text-align: justify;
+}
+
+/*-------Section Phébé------*/
+.sectionPhebe, .info{
+    width: 100%;
+    margin: 3rem auto 3rem auto;
+    background-image: url(../images/1.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    border: 2px solid rebeccapurple;
+    color: white;
+}
+.divPhebe{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#6f0083b9;
+}
+.divPhebe h2{
+    font-size: 2rem;
+}
+.divPhebe p{
+    margin: 0;
+    text-align: center;
+    width: 80%;
+}
+.sectionPhebe button{
+    background-color: var(--couleur-base);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 40px;
+    border-radius: 25px;
+    color: white;
+    margin: 2em;
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.sectionPhebe button:hover{
+    background-color: rgb(131, 68, 194);
+    font-size: 110%;
+}
+.sectionPhebe i{
+    position: relative;
+    right: 20%;
+}
+.sectionPhebe h3{
+    margin: 0;
+}
+/*------------Outils--------------*/
+.outils section{
+    margin: 1.5rem auto 1.5rem auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+.outils img{
+    width: 40%;
+}
+.outils h3{
+    font-family: 'Abril Fatface', cursive;
+    font-weight: 400;
+    font-size: 6vw;
+}
+.outils p{
+    width: 80%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    text-align: center;
+}
+.outils button img{
+    width: 100%;
+}
+.outils button{
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+/*------------Informations--------------*/
+.info{
+    border: 2px solid rgb(191, 172, 211);
+}
+.divInfo{
+    background-color:#4e46758e;
+}
+.divInfo h2 {
+    font-family: 'Abril Fatface', cursive;
+    font-weight: 400;
+    font-size: 6vw;
+}
+.divInfo, .divInfo section, .divInfo div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.divInfo div{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+}
+.divInfo div p{
+    font-weight: 300;
+    width: 85%;
+    margin-top: 0;
+}
+.divInfo h3{
+    font-size: 1.2rem;
+    margin: 0;
+    font-weight: 600;
+}
+.mention{
+    width: 60%;
+    background-color: white;
+    color: black;
+    margin: 2rem;
+    padding: 2rem;
+}
+.mention h3{
+    font-size: 1.4rem;
+}
+.mention p{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+/*----------------------footer-----------------------*/
+.footer1{
+    background-color: var(--rose-commun);
+    color: white;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer h2{
+    font-family: 'Abril Fatface', cursive;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+.footer1 ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 16vh;
+    align-items: center;
+    align-content: space-around;
+    width: 60%;
+}
+.footer1 li{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    margin-top: 8px;
+}
+.footer1 li:first-of-type{
+    font-weight: 600;
+}
+.footer1 div a{
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+.footer1 div:first-of-type{
+    padding: 20px;
+}
+.footer1 div:last-of-type{
+    padding-top: 10px;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.footer1 p{
+    margin: 2px;
+}
+.footer2{
+    display: none;
+}
+
+
+
+/*--------------------------------------------------------------
+Médias queries
+--------------------------------------------------------------*/
+/*---------- Styles TABLETTE--------------*/
+@media (min-width: 576px) {
+/*------------------- MENU -----------------------*/
+.menu-mobile, .filtres {
+    display: none;
+}
+
+.menu-autre {
+    background-color: var(--couleur-bg);
+    color: var(--couleur-base);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 5vh;
+    padding: 0.5rem;
+}
+
+#logo2 {
+    width: 3rem;
+    height: auto;
+    justify-content: center;
+}
+
+.menu-autre a {
+    align-self: center;
+    text-decoration: none;
+
+    color: var(--couleur-base);
+    font-family: 'Poppins', sans-serif;
+}
+
+.menu-autre a:hover {
+    background-color: var(--bleu-fonce);
+    color: var(--couleur-bg);
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex: 1 1 0;
+    max-width: 15rem;
+
+    border: 2px solid var(--couleur-base);
+    padding: 0.2em;
+}
+
+label {
+    padding-right: 0.2em;
+}
+
+input {
+    border: none;
+}
+
+#recherche {
+    color: var(--couleur-base);
+    font-size: 20px;
+    font-weight: bold;
+}
+/*-------------------------MAIN---------------------------*/
+/*-----carrousel----*/
+.carrousel{
+    background-color: white;
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid rgb(125, 105, 148);
+}
+.carrousel h2{
+    font-size: 5vw;
+}
+.contenantImg{
+    overflow: hidden;
+    height: 40%;
+}
+.gallery img{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+/*------------Outils--------------*/
+.outils{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.outils section{
+    margin: 1rem;
+    width: auto;
+}
+.outils img{
+    width: 40%;
+}
+.outils h3{
+    font-size: 3vw;
+    text-align: center;
+}
+.outils p{
+    width: 80%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    text-align: center;
+    font-size: 1rem;
+    height: 92px;
+    overflow: hidden;
+}
+/*----------------------footer-----------------------*/
+.footer1{
+    display: none;
+}
+.footer2{
+    background-color: #9D00B8;
+    color: white;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+.footer2 ul{
+    margin: 0;
+    padding: 2rem 0 0 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 16vh;
+    align-items: center;
+}
+.footer2 div:first-of-type{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80%;
+    flex-grow: 1;
+}
+.footer2 li{
+    padding: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+.footer2 li:first-of-type{
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-family: 'Abril Fatface', cursive;
+}
+.footer2 div:last-of-type{
+    padding-bottom: 1rem;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.footer2 p{
+    margin: 2px;
+}
+}
+
+
+/*---------- Styles GRANS ÉCRANS --------------*/
+@media (min-width: 992px){
+/*-------------------- FOND HEADER -------------------*/
+.menu-autre {
+    background-color: rgba(0, 0, 0, 0.24);
+    color: white;
+}
+.menu-autre a {
+    color: white;
+}
+
+.menu-autre a:hover {
+    background-color: initial;
+    color: rgb(224, 91, 236);
+}
+header{
+    height: 100vh;
+}
+header h1{
+    font-size: 8vw;
+}
+header h2{
+    font-size: 3vw;
+}
+header ul{
+    right: 5%;
+    
+}
+.ligne1{
+    top: 200px;
+    height: 40vh;
+}
+.ligne2{
+    top: 100px;
+    height: 40vh;
+}
+.ligne3{
+    height: 40vh;
+}
+.media{
+    grid-row: 1/3;
+    grid-column: 1/2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.media a{
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+}.media div{
+    height: 15vh;
+    width: 0;
+    border: 2px solid white;
+    border-radius: 25px;
+}
+/*-------------------MAIN-----------------------*/
+/*-----carrousel----*/
+.carrousel{
+    width: 95%;
+    border: 3px solid rgb(125, 105, 148);
+}
+.carrousel h2{
+    position: initial;
+    left: 0;
+    text-align: center;
+    font-size: 4vw;
+}
+.contenantImg{
+    height: 60%;
+}
+.gallery-cell {
+    width: 40%;
+    height: fit-content;
+}
+/*------------Outils--------------*/
+.outils{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.outils section{
+    margin: 2rem;
+    width: auto;
+}
+.outils img{
+    width: 30%;
+}
+.outils h3{
+    font-size: 2vw;
+    text-align: center;
+}
+/*------------Informations--------------*/
+.info{
+    border: 3px solid rgb(191, 172, 211);
+    width: 95%;
+}
+.divInfo h2 {
+    font-size: 4vw;
+}
+/*----------------------footer-----------------------*/
+
+.footer2 li{
+    font-size: 1rem;
+}
+.footer2 li:first-of-type{
+    font-size: 3vw;
+
+
+}
+}
